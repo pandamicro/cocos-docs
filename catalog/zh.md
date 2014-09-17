@@ -40,6 +40,7 @@
 - 使用Cocos Code IDE搭建工程
 
 [点此进入](studio/zh.md)
+51651651
 
 ## 5. Code IDE
 
