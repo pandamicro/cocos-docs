@@ -160,6 +160,11 @@ Under `frameworks/runtime-src/` folder, you can found project files of some plat
 
 ###6.2 Web platform publishing
 
-Execute `cocos compile -p web -m release` will publish your project under `publish/` folder, you can deploy this individual folder on your web server, then it can be visited.
+Execute `cocos compile -p web -m release` will publish your project under `publish/` folder, you can deploy this individual folder on your web server, then it can be visited.br/>
+Need to be aware of is that if you are using the latest CocosStudio.Must be on the page into three files in external/protobuf folder.br/>
+\<script src="external/protobuf/ByteBuffer.min.js"></script><br/>
+\<script src="external/protobuf/Long.min.js"></script><br/>
+\<script src="external/protobuf/ProtoBuf.min.js"></script><br/>
+(games within the referenced external libraries must be manually added to the index.html, and using "/** @expose */" in the code added to the exclusion list of compressing variable names, otherwise it will change because the variable name and corresponding method could not be found)
 
 As mentioned before, add `--advance` option in the publish command can activate closure compiler's advanced compressing mode, you can benefit a higher compression ratio and even better performance. But it has some requirement in your code, if you found your game have issues with advanced mode, please refer to the [Closure Compiler Advanced Compilation Document](https://developers.google.com/closure/compiler/docs/api-tutorial3) for suggestions and solution.

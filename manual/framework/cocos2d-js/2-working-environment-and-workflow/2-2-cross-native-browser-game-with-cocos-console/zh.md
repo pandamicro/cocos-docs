@@ -150,6 +150,11 @@ cocos run -p ios
 
 ###6.4 Web平台发布
 
-运行`cocos compile -p web -m release`既可在`publish/`目录下生成独立的发布文件夹，将该文件夹部署到你的服务器上，用户即可访问。
+运行`cocos compile -p web -m release`既可在`publish/`目录下生成独立的发布文件夹，将该文件夹部署到你的服务器上，用户即可访问。<br/>
+需要注意的是，如果使用了最新的CocosStudio，需要手动在页面(index.html)上加入入external/protobuf下的3个文件。<br/>
+\<script src="external/protobuf/ByteBuffer.min.js"></script><br/>
+\<script src="external/protobuf/Long.min.js"></script><br/>
+\<script src="external/protobuf/ProtoBuf.min.js"></script><br/>
+(所有游戏内引用的外部库都必须手动添加进入页面，并且在代码内使用/** @expose */添加到排除压缩变量名列表，否则会因为变量名更改而找不到对应方法)
 
 命令中添加`--advance`可以开启closure compiler工具高级压缩功能，该模式对代码有一定要求，如果发现打包之后无法正常运行请参考[Closure Compiler Advanced Compilation文档](https://developers.google.com/closure/compiler/docs/api-tutorial3)。
